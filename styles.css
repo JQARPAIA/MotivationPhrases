@@ -2,32 +2,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif, arial;
-    color: #000;
+    font-family: 'Open Sans', sans-serif;   
 }
 :root {
-    --softBlue: #11f;
+    --softBlue: var(--darkBlue);
     --darkBlue: #44f;
 }
 
+body {
+    background: linear-gradient(to bottom, #4f4, #44f);
+}
 header {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
-    margin: 20px 10% 10px;
+    margin: 20px 3em 10px;
+    color: var(--softBlue);
 }
-
 header p {
-    margin: 20px 10% 0;
     text-align: justify;
-
+    color: var(--softBlue);
 }
-
-body {
-    background-color: #444;
+.flex-container {
+    display: flex;
+    justify-content: center;
 }
-
 .card {
     display: flex;
     flex-flow: column wrap;
@@ -37,27 +37,62 @@ body {
     min-height: 160px;
     max-width: 400px;
     padding: 10px;
-    margin: 40px auto 30px;
+    margin: 40px 20px 30px;
     box-shadow: 0 0 20px var(--softBlue);
     transition: all .5s;
+    background-color: #333;
 }
 
 .card:hover {
-    box-shadow: 0 0 50px var(--darkBlue);
-    transform: scale(1.1);
+    box-shadow: 0 0 100px var(--darkBlue);
+    transform: rotate(360deg);
+}
+
+.card__touchMe {
+    font-size: 10px;
+    animation-name: touchMe;
+    animation-timing-function: ease-out;
+    animation-duration: 1.5s;
+    animation-delay: .5s;
+    animation-iteration-count: 5;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+@keyframes touchMe {
+    0% {
+        color: #aa0;
+    }
+    50% {
+        letter-spacing: 3px;
+    }
+    100% {
+        display: none;
+    }
 }
 .card__title {
+    font-family: 'Syne Mono', monospace;
+    color: #004;
     font-size: 25px;
     margin-top: 10px;
+}
+.card__title::before {
+    content: '"';
+}
+
+.card__title::after {
+    content: '"';
 }
 
 .card__author {
     align-self: flex-end;
     opacity: .5;
+    color: #aaa;
 }
 .card p {
     text-align: justify;
     margin-top: 10px;
+    color: #aaa;
 }
 
 .card__img {
@@ -93,4 +128,15 @@ body {
 
 .randomButton:focus {
     outline: none;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 10px;
+    color: #aaa;
+}
+
+footer a {
+    color: #004;
 }

@@ -5,20 +5,25 @@
     font-family: 'Open Sans', sans-serif;   
 }
 :root {
-    --softBlue: var(--darkBlue);
+    --softBlue: #11f;
     --darkBlue: #44f;
+    --green: #4f4;
 }
 
 body {
-    background: linear-gradient(to bottom, #4f4, #44f);
+    background: linear-gradient(to bottom, var(--green), var(--darkBlue));
 }
 header {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
-    margin: 20px 3em 10px;
+    margin: 20px 25px 10px;
     color: var(--softBlue);
+}
+
+header > h1 {
+    letter-spacing: 5px;
 }
 header p {
     text-align: justify;
@@ -34,41 +39,17 @@ header p {
     justify-content: center;
     align-items: center;
     min-width: 100px;
-    min-height: 160px;
-    max-width: 400px;
+    min-height: 200px;
+    max-width: 300px;
     padding: 10px;
     margin: 40px 20px 30px;
     box-shadow: 0 0 20px var(--softBlue);
     transition: all .5s;
-    background-color: #333;
+    background-color: #666;
 }
-
 .card:hover {
     box-shadow: 0 0 100px var(--darkBlue);
-    transform: rotate(360deg);
-}
-
-.card__touchMe {
-    font-size: 10px;
-    animation-name: touchMe;
-    animation-timing-function: ease-out;
-    animation-duration: 1.5s;
-    animation-delay: .5s;
-    animation-iteration-count: 5;
-    animation-direction: alternate;
-    animation-fill-mode: forwards;
-}
-
-@keyframes touchMe {
-    0% {
-        color: #aa0;
-    }
-    50% {
-        letter-spacing: 3px;
-    }
-    100% {
-        display: none;
-    }
+    transform: scale(1.1);
 }
 .card__title {
     font-family: 'Syne Mono', monospace;
@@ -96,12 +77,14 @@ header p {
 }
 
 .card__img {
-    display: flex;
     align-self: center;
-    object-fit: cover;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
 }
 .card__image {
-    justify-self: center;
     width: 95%;
     margin: 0 5px;
 }
@@ -111,19 +94,19 @@ header p {
     justify-content: center;
 }
 .randomButton {
-    padding: 20px;
-    width: 250px;
+    padding: 10px;
+    width: 150px;
     background: var(--darkBlue);
-    border: none;
+    border: 3px solid var(--green);
     color: #fff;
-    letter-spacing: 1px;
+    border-radius: 50%;
+    letter-spacing: 3px;
     transition: all .5s;
 }
 
 .randomButton:hover {
     background: var(--softBlue);
-    outline: none;
-    letter-spacing: 3px;
+    border: 2px solid var(--green);
 }
 
 .randomButton:focus {
